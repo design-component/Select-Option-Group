@@ -7,7 +7,7 @@ function SelectOptionUsingUlLi({ list }) {
 	return (
 		<div className={style.wrap}>
 			<button className={style.selectButton} onClick={() => setShow((e) => !e)}>
-				<span>{value ? value : 'Select'}</span>
+				<span style={{ flexGrow: 1 }}>{value ? value : 'Select'}</span>
 				{show ? (
 					<span style={{ marginTop: '5px' }}>
 						<svg
@@ -109,18 +109,33 @@ function SelectOptionUsingUlLi({ list }) {
 				</ul>
 			)}
 			<div>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse id
-				exercitationem, impedit earum deserunt illum officiis ullam. Odit
-				quibusdam architecto perspiciatis inventore molestias atque praesentium
-				eveniet officia sequi maxime. Saepe, dolorum consequatur? Ipsa enim
-				nesciunt commodi iure repellendus nisi impedit error nulla dolores esse
-				totam dolor sapiente in, saepe porro deleniti. Officia eligendi eos
-				laudantium quidem recusandae reprehenderit dolorem repellat veniam in!
-				Eos dolore, ab repellat corporis eligendi fugit, illo minima tempora
-				obcaecati enim placeat labore. Quasi asperiores accusantium, quia
-				placeat temporibus debitis exercitationem necessitatibus quam accusamus
-				provident quaerat, magnam, maxime cumque consectetur nobis consequuntur
-				aspernatur harum possimus veritatis reprehenderit?
+				<pre>
+					{JSON.stringify(
+						[
+							{ id: 1, value: '1' },
+							{ id: 2, value: '2' },
+							{
+								id: 3,
+								value: '3',
+								sub: [
+									{ id: 31, value: '3.1' },
+									{ id: 32, value: '3.2' },
+								],
+							},
+							{ id: 4, value: '4' },
+							{
+								id: 5,
+								value: '5',
+								sub: [
+									{ id: 51, value: '5.1' },
+									{ id: 52, value: '5.2' },
+								],
+							},
+						],
+						null,
+						2
+					)}
+				</pre>
 			</div>
 		</div>
 	);
