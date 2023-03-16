@@ -1,1 +1,1 @@
-git remote set-url
+https://select-sub-items.netlify.app/
